@@ -1,10 +1,12 @@
+import string
 def main(data:str):
-    """
-    The data is from the file. Find the largest of the numeric characters.
-    Args:
-        data: str
-    Returns:
-        int: return answer
-    """
-
-# Read data from file
+    a=open(data,"r")
+    n=a.read()
+    numbers=string.digits
+    digit=0
+    for i in n:
+        if i in numbers:
+            if digit<int(i):
+                digit=int(i)
+    return digit
+print(main("data/data08.txt"))
