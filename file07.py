@@ -1,10 +1,14 @@
+import string
 def main(data:str):
-    """
-    The data is from the file. Find a sum of numeric characters and return as list type.
-    Args:
-        data: str
-    Returns:
-        int: return answer
-    """
-    
-# Read data from file
+    a=open(data,"r")
+    n=a.read()
+    b=string.digits
+    digit=0
+    for i in n:
+        j=0
+        while len(b)>j:
+            if b[j]==i:
+                digit+=int(i)
+            j+=1
+    return digit
+print(main("data/data07.txt"))
